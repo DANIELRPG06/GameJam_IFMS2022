@@ -48,7 +48,7 @@ public class Inimigo : MonoBehaviour
             this.rigidbody.velocity = Vector2.zero;
         }
        
-s        
+       
     }
     private void OnDrawGizmos()
     {
