@@ -31,7 +31,14 @@ public class TopDownMove : MonoBehaviour
         Vector2 direcao = new Vector2(horizontal, vertical);
         this.rb.velocity = direcao * this.velocidadeMov;
 
-
+        // olha pro cursor
+        Vector3 mousePos = Input.mousePosition;
+        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+        Vector2 direction = new Vector2(
+            mousePos.x - transform.position.x,
+            mousePos.y - transform.position.y
+        );
+        transform.up = direction;
 
     }
 }
