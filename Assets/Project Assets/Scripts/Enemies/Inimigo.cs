@@ -16,7 +16,7 @@ public class Inimigo : MonoBehaviour
     [SerializeField]
     private float raioVisao;
     [SerializeField]
-    private float anguloVisao = 70f;
+    private float anguloVisao = 120f;
 
     [SerializeField]
     private LayerMask layerAreaVisao;
@@ -28,10 +28,14 @@ public class Inimigo : MonoBehaviour
     private float distanciaMinima;
 
     private TopDownCharacterMotor motor;
+    private PathSeeker seeker;
+
+    public Transform player;
 
     private void Start()
     {
         motor = GetComponent<TopDownCharacterMotor>();
+        seeker = GetComponent<PathSeeker>();
         estadoAtual = Estado.Patrulha;
     }
 
@@ -47,6 +51,12 @@ public class Inimigo : MonoBehaviour
             case Estado.Perseguicao:
                 Perseguir();
                 break;
+        }
+
+        if(Input.GetKey("tab")){
+            estadoAtual = Estado.Perseguicao;
+            alvo = player.position;
+            seeker.SetTarget(alvo);
         }
     }
 
@@ -64,15 +74,6 @@ public class Inimigo : MonoBehaviour
         Vector2 posicaoAtual = this.transform.position;
 
         float distancia = Vector2.Distance(posicaoAtual, posicaoAlvo);
-        if (distancia >= this.distanciaMinima)
-        {
-            Vector2 direcao = posicaoAlvo - posicaoAtual;
-            // Pathfinding.findPath(minhaPOsicao, alvo);
-            direcao = direcao.normalized;
-
-            motor.SetMove(direcao);
-            motor.SetLook(direcao);
-        }
 
         // Chegou até a ultima posição do player e não o achou, volta a patrulhar
         if (distancia < 0.1 && alvo == ultimoAlvo)
@@ -83,7 +84,6 @@ public class Inimigo : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        //Gizmos.DrawLine(transform.position, transform.position + (Vector3)(motor.lookDirection * raioVisao));
         Gizmos.DrawWireSphere(this.transform.position, this.raioVisao);
         if (this.alvo != null)
         {
@@ -107,10 +107,7 @@ public class Inimigo : MonoBehaviour
         direcaoAlvo = direcaoAlvo.normalized;
 
         float angleToTarget = Vector2.Angle(this.transform.up, direcaoAlvo);
-        Debug.Log(angleToTarget);
         if (angleToTarget > this.anguloVisao) return;
-        
-            
 
         RaycastHit2D hit = Physics2D.Raycast(posicaoAtual, direcaoAlvo);
         if (hit.transform && hit.transform.CompareTag("Player"))
@@ -122,6 +119,10 @@ public class Inimigo : MonoBehaviour
         {
             this.alvo = ultimoAlvo;
         }
-        ultimoAlvo = this.alvo;
+        if (alvo != ultimoAlvo)
+        {
+            seeker.SetTarget(alvo);
+            ultimoAlvo = this.alvo;
+        }
     }
 }
