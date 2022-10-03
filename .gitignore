@@ -61,6 +61,15 @@ crashlytics-build.properties
 Assets/Scenes/SampleScene.unity
 UserSettings/Layouts/default-2021.dwlt
 UserSettings/Layouts/default-2021.dwlt
+<<<<<<< Updated upstream
 /UserSettings/*
 
 /.vscode/
+=======
+UserSettings/Layouts/default-2021.dwlt
+UserSettings/EditorUserSettings.asset
+ProjectSettings/TagManager.asset
+UserSettings/Layouts/default-2021.dwlt
+*.dwlt
+>>>>>>> Stashed changes
+UserSettings/Layouts/default-2021.dwlt
