@@ -346,7 +346,7 @@ MonoBehaviour:
     m_Bits: 8
   velocidadeMovimento: 2
   rigidbody: {fileID: 906374897}
-  distanciaMinima: 0.1
+  distanciaMinima: 0.3
 --- !u!50 &906374897
 Rigidbody2D:
   serializedVersion: 4

@@ -23,7 +23,7 @@ public class Inimigo : MonoBehaviour
     private float distanciaMinima;
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         ProcurarJogador();
         if(this.alvo != null)
@@ -48,7 +48,11 @@ public class Inimigo : MonoBehaviour
             this.rigidbody.velocity = Vector2.zero;
         }
        
+<<<<<<< Updated upstream
        
+=======
+        
+>>>>>>> Stashed changes
     }
     private void OnDrawGizmos()
     {
@@ -71,7 +75,7 @@ public class Inimigo : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(posicaoAtual, direcao);
             if(hit.transform != null)
             {
-                if (hit.transform.CompareTag(""))
+                if (hit.transform.CompareTag("Player"))
                 {
                     this.alvo = hit.transform;
                 }
