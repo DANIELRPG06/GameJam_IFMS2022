@@ -3,23 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-<<<<<<< Updated upstream
-  - Ground
-  - Obstacles
-=======
-  - coletavel
->>>>>>> Stashed changes
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Jogador
+  - 
   - Water
   - UI
   - 
-  - obstacle
-  - layerTest
+  - 
+  - 
   - 
   - 
   - 
@@ -46,7 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: test
-    uniqueID: 1552800467
     locked: 0
