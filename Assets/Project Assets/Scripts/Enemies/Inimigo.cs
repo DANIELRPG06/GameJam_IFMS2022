@@ -63,20 +63,24 @@ public class Inimigo : MonoBehaviour
     // Não sabe onde o player está; vaga por aí
     private void Patrulhar()
     {
-        motor.SetMove(Vector2.zero);
-        //TODO
+        motor.SetRunning(false);
+        if(seeker.reachedEndOfPath){
+            alvo = new Vector2(Random.Range(-10f, 10f), Random.Range(-10f, 10f));
+            seeker.SetTarget(alvo);
+        }
     }
 
     // Sabe onde o player está/esteve; vai até a posição
     private void Perseguir()
     {
+        motor.SetRunning(true);
         Vector2 posicaoAlvo = this.alvo;
         Vector2 posicaoAtual = this.transform.position;
 
         float distancia = Vector2.Distance(posicaoAtual, posicaoAlvo);
 
         // Chegou até a ultima posição do player e não o achou, volta a patrulhar
-        if (distancia < 0.1 && alvo == ultimoAlvo)
+        if (seeker.reachedEndOfPath)
         {
             estadoAtual = Estado.Patrulha;
         }

@@ -48,7 +48,6 @@ public class PathSeeker : MonoBehaviour {
         float distanceToWaypoint;
         while (true) {
             distanceToWaypoint = Vector3.Distance(transform.position, path.vectorPath[currentWaypoint]);
-            Debug.Log(distanceToWaypoint);
             if (distanceToWaypoint < nextWaypointDistance) {
                 // Check if there is another waypoint or if we have reached the end of the path
                 if (currentWaypoint + 1 < path.vectorPath.Count) {
