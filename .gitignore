@@ -61,4 +61,6 @@ crashlytics-build.properties
 Assets/Scenes/SampleScene.unity
 UserSettings/Layouts/default-2021.dwlt
 UserSettings/Layouts/default-2021.dwlt
-UserSettings/Layouts/default-2021.dwlt
+/UserSettings/*
+
+/.vscode/
