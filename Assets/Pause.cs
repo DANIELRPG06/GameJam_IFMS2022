@@ -16,6 +16,7 @@ public class Pause : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
+            Debug.Log("Esc foi pressionado");
             if(isGamePaused)
             {
                 ResumeGame();
@@ -24,7 +25,7 @@ public class Pause : MonoBehaviour
             {
                 PauseGame();
             }
-        }
+        }   
     }
 
     public void ResumeGame()
@@ -32,18 +33,19 @@ public class Pause : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isGamePaused = false;
+        SceneManager.LoadScene("Jogo Teste");
     }
 
     public void PauseGame()
     {
         pauseMenu.SetActive(true);
          Time.timeScale = 0f;
-        isGamePaused = true;
+        isGamePaused = true; 
     }
 
     public void LoadMenu()
     {
-        SceneManager.LoadScene("Lucas");
+        SceneManager.LoadScene("Main Menu");
         Time.timeScale = 1f;
     }
 
