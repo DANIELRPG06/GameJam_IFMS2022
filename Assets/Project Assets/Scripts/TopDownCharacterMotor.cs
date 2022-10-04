@@ -11,14 +11,14 @@ public class TopDownCharacterMotor : MonoBehaviour
     [SerializeField]
     private float runningMultiplier = 1.5f;
     [SerializeField]
-    private float maxStamina = 5f;
+    public float maxStamina { get; private set; } = 5f;
 
 
     public Vector2 lookDirection = new Vector2(1, 0);
     Vector2 moveDirection = new Vector2(0, 0);
 
-    private bool isRunning = false;
-    private float stamina = 0f;
+    public bool isRunning { get; private set; } = false;
+    public float stamina { get; private set; } = 0f;
 
 
     private void Start()
@@ -26,11 +26,11 @@ public class TopDownCharacterMotor : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         stamina = maxStamina;
     }
-    
+
     void Update()
     {
         Vector2 velocity = moveDirection * velocidadeMov;
-        if (isRunning)
+        if (isRunning && velocity.magnitude > 0)
         {
             velocity *= runningMultiplier;
             stamina -= Time.deltaTime;

@@ -30,8 +30,6 @@ public class Inimigo : MonoBehaviour
     private TopDownCharacterMotor motor;
     private PathSeeker seeker;
 
-    public Transform player;
-
     private void Start()
     {
         motor = GetComponent<TopDownCharacterMotor>();
@@ -53,18 +51,14 @@ public class Inimigo : MonoBehaviour
                 break;
         }
 
-        if(Input.GetKey("tab")){
-            estadoAtual = Estado.Perseguicao;
-            alvo = player.position;
-            seeker.SetTarget(alvo);
-        }
     }
 
     // Não sabe onde o player está; vaga por aí
     private void Patrulhar()
     {
         motor.SetRunning(false);
-        if(seeker.reachedEndOfPath){
+        if (seeker.reachedEndOfPath)
+        {
             alvo = new Vector2(Random.Range(-10f, 10f), Random.Range(-10f, 10f));
             seeker.SetTarget(alvo);
         }
@@ -86,12 +80,21 @@ public class Inimigo : MonoBehaviour
         }
     }
 
+    public void AlertaPlayer(Transform player)
+    {
+        estadoAtual = Estado.Perseguicao;
+        alvo = player.position;
+        seeker.SetTarget(alvo);
+    }
+
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(this.transform.position, this.raioVisao);
-        if (this.alvo != null)
+        if (Application.isPlaying)
         {
-            Gizmos.DrawLine(this.transform.position, this.alvo);
+            Vector3 leftRay = Quaternion.AngleAxis(-anguloVisao / 2, transform.forward) * transform.up;
+            Vector3 rightRay = Quaternion.AngleAxis(anguloVisao / 2, transform.forward) * transform.up;
+            Gizmos.DrawRay(transform.position, leftRay * raioVisao);
+            Gizmos.DrawRay(transform.position, rightRay * raioVisao);
         }
     }
 
