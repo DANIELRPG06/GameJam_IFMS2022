@@ -5,21 +5,15 @@ public class PlayerInput : MonoBehaviour
 {
 
     private TopDownCharacterMotor motor;
-    private GameManager gameManager;
 
     private void Start()
     {
         motor = GetComponent<TopDownCharacterMotor>();
-        gameManager = FindObjectOfType<GameManager>();
     }
 
     //update
     private void Update()
     {
-        if (gameManager.isMapOpen)
-        {
-            return;
-        }
         //movimento
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
@@ -35,11 +29,11 @@ public class PlayerInput : MonoBehaviour
         );
         this.motor.SetLook(direction);
 
-        if (Input.GetButtonDown("Sprint"))
+        if(Input.GetButtonDown("Sprint"))
         {
             this.motor.SetRunning(true);
         }
-        if (Input.GetButtonUp("Sprint"))
+        if(Input.GetButtonUp("Sprint"))
         {
             this.motor.SetRunning(false);
         }

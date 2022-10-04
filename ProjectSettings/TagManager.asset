@@ -4,15 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - interagivel
   - Obstacles
+  - coletavel
   - Inimigo
   - Porta
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Obstacles
+  - 
   - Water
   - UI
   - 

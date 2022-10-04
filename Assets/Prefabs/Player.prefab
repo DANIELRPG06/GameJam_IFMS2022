@@ -48,10 +48,10 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.6
-  m_Color: {r: 0.990566, g: 0.80569154, b: 0.6775098, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
-  m_LightVolumeIntensity: 0.03
-  m_LightVolumeIntensityEnabled: 1
+  m_LightVolumeIntensity: 0.24
+  m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
@@ -59,12 +59,12 @@ MonoBehaviour:
   m_AlphaBlendOnOverlap: 0
   m_OverlapOperation: 0
   m_NormalMapDistance: 3
-  m_NormalMapQuality: 1
+  m_NormalMapQuality: 0
   m_UseNormalMap: 0
   m_ShadowIntensityEnabled: 1
-  m_ShadowIntensity: 1
+  m_ShadowIntensity: 0.9
   m_ShadowVolumeIntensityEnabled: 1
-  m_ShadowVolumeIntensity: 0.712
+  m_ShadowVolumeIntensity: 0.75
   m_Vertices:
   - position: {x: 0.9985302, y: 0.9985302, z: 0}
     color: {r: 0.70710677, g: 0.70710677, b: 0, a: 0}
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 77.822205
+  m_PointLightInnerAngle: 130.7405
   m_PointLightOuterAngle: 200
   m_PointLightInnerRadius: 2
   m_PointLightOuterRadius: 10
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 1059687120}
   - component: {fileID: 2028901121}
   - component: {fileID: 2028901122}
-  - component: {fileID: 2028901127}
+  - component: {fileID: 2028901132}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -266,7 +266,7 @@ MonoBehaviour:
   runningMultiplier: 2
   maxStamina: 5
   lookDirection: {x: 1, y: 0}
---- !u!114 &2028901127
+--- !u!114 &2028901132
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -275,7 +275,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 256332437285910942}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22598294bb4c6044b8962656bffeccf5, type: 3}
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaveQtdText: {fileID: 0}
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 1
+  m_ApplyToSortingLayers: 00000000d3da8d5c
+  m_ShapePath:
+  - {x: -0.5, y: -0.50000024, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: 0.5, y: -0.50000024, z: 0}
+  m_ShapePathHash: 0
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -166872
