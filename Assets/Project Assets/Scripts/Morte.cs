@@ -9,7 +9,7 @@ public class Morte : MonoBehaviour
     {
         if(collision.gameObject.tag == "Inimigo")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene("Fail");
         }
     }
 }

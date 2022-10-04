@@ -9,7 +9,7 @@ public class EndGame : MonoBehaviour
     {
         if (collision.gameObject.tag == "Porta")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+            SceneManager.LoadScene("End Game");
         }
     }
 }
