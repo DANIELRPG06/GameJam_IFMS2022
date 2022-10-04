@@ -213,7 +213,7 @@ MonoBehaviour:
   anguloVisao: 120
   layerAreaVisao:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 72
   velocidadeMovimento: 3
   distanciaMinima: 0.3
 --- !u!61 &5329237397553325197
@@ -256,7 +256,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidadeMov: 1
   runningMultiplier: 4
-  maxStamina: 100
   lookDirection: {x: 1, y: 0}
 --- !u!114 &5329237397553325187
 MonoBehaviour:
