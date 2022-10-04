@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Jogo Teste.unity
     guid: d1df23d3209095f41a32f0df0f232a14
+  - enabled: 1
+    path: Assets/Scenes/Daniel.unity
+    guid: 77eae3df0aab2094aa52e7ebe77bbf52
+  - enabled: 1
+    path: Assets/Scenes/Fail.unity
+    guid: d7d1e6b9b76c3fa44aeb36187ef74ddf
+  - enabled: 1
+    path: Assets/Scenes/End Game.unity
+    guid: f981f384b9d0e6043b6a9e0167809aa0
   m_configObjects: {}
