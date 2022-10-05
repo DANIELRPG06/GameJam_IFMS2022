@@ -3,6 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(TopDownCharacterMotor))]
 public class PlayerInput : MonoBehaviour
 {
+    public Animator anim;
 
     private TopDownCharacterMotor motor;
     private GameManager gameManager;
@@ -11,6 +12,7 @@ public class PlayerInput : MonoBehaviour
     {
         motor = GetComponent<TopDownCharacterMotor>();
         gameManager = FindObjectOfType<GameManager>();
+        anim = GetComponent<Animator>();
     }
 
     //update
@@ -26,6 +28,26 @@ public class PlayerInput : MonoBehaviour
         Vector2 direcao = new Vector2(horizontal, vertical);
         this.motor.SetMove(direcao);
 
+        if (Input.GetAxis("Horizontal") != 0)
+        {
+            anim.SetBool("taAndando", true);
+        }
+        else
+        {
+            anim.SetBool("taAndando", false);
+        }
+
+        if (Input.GetAxis("Vertical") != 0)
+        {
+            anim.SetBool("taAndando", true);
+        }
+        else
+        {
+            anim.SetBool("taAndando", false);
+        }
+
+        
+
         // olha pro cursor
         Vector3 mousePos = Input.mousePosition;
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
@@ -38,10 +60,12 @@ public class PlayerInput : MonoBehaviour
         if (Input.GetButtonDown("Sprint"))
         {
             this.motor.SetRunning(true);
+            anim.SetBool("taCorrendo", true);
         }
         if (Input.GetButtonUp("Sprint"))
         {
             this.motor.SetRunning(false);
+            anim.SetBool("taCorrendo", false);
         }
     }
 
