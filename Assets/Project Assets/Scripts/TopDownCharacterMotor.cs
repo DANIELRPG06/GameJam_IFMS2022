@@ -15,7 +15,7 @@ public class TopDownCharacterMotor : MonoBehaviour
 
 
     public Vector2 lookDirection = new Vector2(1, 0);
-    Vector2 moveDirection = new Vector2(0, 0);
+    public Vector2 moveDirection = new Vector2(0, 0);
 
     public bool isRunning { get; private set; } = false;
     public float stamina { get; private set; } = 0f;

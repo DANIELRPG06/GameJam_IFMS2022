@@ -4,23 +4,18 @@ using UnityEngine;
 
 public class animationprincipal : MonoBehaviour
 {
-    public Rigidbody2D ribi;
     public Animator anim;
-    // Start is called before the first frame update
+    private TopDownCharacterMotor motor;
     void Start()
     {
-        ribi = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        motor = GetComponent<TopDownCharacterMotor>();
     }
 
     // Update is called once per frame
     private void Update()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-        Vector2 direc = new Vector2(horizontal, vertical);
-
-        if(Input.GetAxis("Horizontal") != 0)
+        if(motor.moveDirection.magnitude > 0)
         {
             anim.SetBool("taAndando", true);
         }
@@ -28,21 +23,12 @@ public class animationprincipal : MonoBehaviour
         {
             anim.SetBool("taAndando", false);
         }
-
-        if (Input.GetAxis("Vertical") != 0)
-        {
-            anim.SetBool("taAndando", true);
-        }
-        else
-        {
-            anim.SetBool("taAndando", false);
-        }
-
-        if (Input.GetButtonDown("Sprint"))
+        
+        if(motor.isRunning)
         {
             anim.SetBool("taCorrendo", true);
         }
-        if (Input.GetButtonUp("Sprint"))
+        else
         {
             anim.SetBool("taCorrendo", false);
         }

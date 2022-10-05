@@ -59,7 +59,7 @@ public class Inimigo : MonoBehaviour
         motor.SetRunning(false);
         if (seeker.reachedEndOfPath)
         {
-            alvo = new Vector2(Random.Range(-10f, 10f), Random.Range(-10f, 10f));
+            alvo = (Vector2)transform.position + new Vector2(Random.Range(-10f, 10f), Random.Range(-10f, 10f));
             seeker.SetTarget(alvo);
         }
     }

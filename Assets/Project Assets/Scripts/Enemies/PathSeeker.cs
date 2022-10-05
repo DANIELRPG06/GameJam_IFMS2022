@@ -32,6 +32,8 @@ public class PathSeeker : MonoBehaviour {
             path = p;
             // Reset the waypoint counter so that we start to move towards the first point in the path
             currentWaypoint = 0;
+        }else{
+            reachedEndOfPath = true;
         }
     }
 
