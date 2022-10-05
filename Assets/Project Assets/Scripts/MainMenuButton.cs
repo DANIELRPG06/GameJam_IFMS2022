@@ -9,7 +9,7 @@ public class MainMenuButton : MonoBehaviour
     // Start is called before the first frame update
     public void Restart()
     {
-        SceneManager.LoadScene("Jogo Teste");
+        SceneManager.LoadScene("Game");
     }
 
     public void MainMenuBut()
