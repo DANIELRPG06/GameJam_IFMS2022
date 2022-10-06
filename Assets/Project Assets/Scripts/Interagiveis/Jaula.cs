@@ -24,4 +24,16 @@ public class Jaula: MonoBehaviour, IInteragivel
     {
         return true;
     }
+
+    public string GetDescricao(Player player)
+    {
+        if (player.chaveQtd > 0)
+        {
+            return "Pressione E para libertar";
+        }
+        else
+        {
+            return "Você precisa de uma chave";
+        }
+    }
 }

@@ -16,4 +16,8 @@ public class Chave : MonoBehaviour, IInteragivel
         return false;
     }
     
+    public string GetDescricao(Player player)
+    {
+        return "";
+    }
 }

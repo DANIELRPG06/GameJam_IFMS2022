@@ -30,11 +30,15 @@ public class Inimigo : MonoBehaviour
     private TopDownCharacterMotor motor;
     private PathSeeker seeker;
 
+    [SerializeField]
+    private GameObject seekLight;
+
     private void Start()
     {
         motor = GetComponent<TopDownCharacterMotor>();
         seeker = GetComponent<PathSeeker>();
         estadoAtual = Estado.Patrulha;
+        seekLight.SetActive(false);
     }
 
     // Update is called once per frame
@@ -77,6 +81,7 @@ public class Inimigo : MonoBehaviour
         if (seeker.reachedEndOfPath)
         {
             estadoAtual = Estado.Patrulha;
+            seekLight.SetActive(false);
         }
     }
 
@@ -85,6 +90,7 @@ public class Inimigo : MonoBehaviour
         estadoAtual = Estado.Perseguicao;
         alvo = player.position;
         seeker.SetTarget(alvo);
+        seekLight.SetActive(true);
     }
 
     private void OnDrawGizmos()
@@ -121,6 +127,7 @@ public class Inimigo : MonoBehaviour
         {
             estadoAtual = Estado.Perseguicao;
             this.alvo = hit.transform.position;
+            seekLight.SetActive(true);
         }
         else
         {

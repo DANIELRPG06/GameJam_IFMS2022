@@ -10,6 +10,10 @@ public class GUI : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI staminaText;
     [SerializeField]
+    private TextMeshProUGUI notificacaoText;
+
+
+    [SerializeField]
     private Player player;
     private TopDownCharacterMotor playerMotor;
 
@@ -24,7 +28,16 @@ public class GUI : MonoBehaviour
         float stamina =( playerMotor.stamina / playerMotor.maxStamina)*100;
 
         pontosText.text = "Pontos: " + player.pontos.ToString();
-        chaveQtdText.text = "Chaves: " + player.chaveQtd.ToString();
+        chaveQtdText.text = player.chaveQtd.ToString();
         staminaText.text = "Stamina: " + stamina.ToString("F0") + "%";
+
+        if(player.interagivelPerto != null)
+        {
+            notificacaoText.text = player.interagivelPerto.GetDescricao(player);
+        }
+        else
+        {
+            notificacaoText.text = "";
+        }
     }
 }

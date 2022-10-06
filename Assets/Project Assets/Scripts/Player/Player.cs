@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
     public int pontos { get; private set; } = 0;
 
 
-    private IInteragivel interagivelPerto;
+    public IInteragivel interagivelPerto { get; private set; }
     private void Update()
     {
         if (Input.GetButtonDown("Interact") && interagivelPerto != null)
