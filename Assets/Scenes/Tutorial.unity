@@ -928,7 +928,9 @@ MonoBehaviour:
     - mover\r\nMouse - controlar vis\xE3o\r\nshit - correr\r\nTab - olhar o mapa\r\n\r\nCUIDADO
     - O mapa possui um tipo de liga\xE7\xE3o com o labirinto e seus guardi\xF5es.
     Os protetores do labirinto sempre saber\xE3o onde voc\xEA est\xE1 enquanto estiver
-    lendo o mapa.\r\n\r\nBoa sorte \r\n\n\r\n\n"
+    lendo o mapa.\r\n\n9 aventureiros foram capturados pelos guardi\xF5es. Eles est\xE3o
+    presos e espalhados pelo labirinto. Liberte-os, se for capaz. As chaves das celas
+    est\xE3o no labirinto.\n\r\nBoa sorte \r\n\n\r\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -955,8 +957,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
