@@ -300,8 +300,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Programador - Daniel Santos\nProgramador - Eric Lopes\nProgramador - Lucas
-    Muzza\nArtista - Rafael\nArtista - Gabriela Abrantes\nArtista - Fl\xE1vio Gomes\nArtista
-    - Jo\xE3o Ojeda\n\n\n\n"
+    Muzza\nArtista - Rafael Meireles\nArtista - Gabriela Abrantes\nArtista - Fl\xE1vio
+    Gomes\nArtista - Jo\xE3o Ojeda\n\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1249,7 +1249,7 @@ Transform:
   m_GameObject: {fileID: 2019000955}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.070866585, y: -0.028587341, z: 0}
-  m_LocalScale: {x: 1.1390625, y: 0.9745313, z: 1}
+  m_LocalScale: {x: 1.2116866, y: 1.0747325, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
