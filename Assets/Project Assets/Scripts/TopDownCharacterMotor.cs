@@ -11,7 +11,7 @@ public class TopDownCharacterMotor : MonoBehaviour
     [SerializeField]
     private float runningMultiplier = 1.5f;
     [SerializeField]
-    public float maxStamina { get; private set; } = 5f;
+    public float maxStamina = 5f;
 
 
     public Vector2 lookDirection = new Vector2(1, 0);

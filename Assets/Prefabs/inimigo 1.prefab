@@ -176,6 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidadeMov: 1.5
   runningMultiplier: 3
+  maxStamina: 10
   lookDirection: {x: 1, y: 0}
   moveDirection: {x: 0, y: 0}
 --- !u!114 &3940591728456629700
