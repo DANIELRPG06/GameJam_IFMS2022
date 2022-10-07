@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: 96f7434efc770ca4e8d41c07eb879207
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Jogo Teste.unity
     guid: d1df23d3209095f41a32f0df0f232a14
   - enabled: 0
@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 82e9c351aee425b4cbd3d3da082bc069
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Daniel.unity
     guid: 77eae3df0aab2094aa52e7ebe77bbf52
   - enabled: 1
