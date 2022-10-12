@@ -3,8 +3,6 @@ using UnityEngine;
 [RequireComponent(typeof(TopDownCharacterMotor))]
 public class PlayerInput : MonoBehaviour
 {
-
-
     private TopDownCharacterMotor motor;
     private GameManager gameManager;
 
@@ -28,8 +26,6 @@ public class PlayerInput : MonoBehaviour
         Vector2 direcao = new Vector2(horizontal, vertical);
         this.motor.SetMove(direcao);
 
-
-
         // olha pro cursor
         Vector3 mousePos = Input.mousePosition;
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
@@ -42,13 +38,10 @@ public class PlayerInput : MonoBehaviour
         if (Input.GetButtonDown("Sprint"))
         {
             this.motor.SetRunning(true);
-
         }
         if (Input.GetButtonUp("Sprint"))
         {
             this.motor.SetRunning(false);
-
         }
     }
-
 }

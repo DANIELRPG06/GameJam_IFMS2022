@@ -23,7 +23,6 @@ public class GameManager : MonoBehaviour
             if (isMapOpen)
             {
                 AlertaInimigo();
-
             }
         }
 

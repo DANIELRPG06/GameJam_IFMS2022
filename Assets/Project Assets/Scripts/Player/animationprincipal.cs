@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator), typeof(TopDownCharacterMotor))]
 public class animationprincipal : MonoBehaviour
 {
     public Animator anim;
@@ -15,22 +14,7 @@ public class animationprincipal : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if(motor.moveDirection.magnitude > 0)
-        {
-            anim.SetBool("taAndando", true);
-        }
-        else
-        {
-            anim.SetBool("taAndando", false);
-        }
-        
-        if(motor.isRunning)
-        {
-            anim.SetBool("taCorrendo", true);
-        }
-        else
-        {
-            anim.SetBool("taCorrendo", false);
-        }
+        anim.SetBool("taAndando", motor.moveDirection.magnitude > 0);
+        anim.SetBool("taCorrendo", motor.isRunning);
     }
 }

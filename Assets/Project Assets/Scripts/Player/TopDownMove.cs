@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class TopDownMove : MonoBehaviour
 {
-
 
     [SerializeField]
     private Rigidbody2D rb;
@@ -12,17 +10,13 @@ public class TopDownMove : MonoBehaviour
     [SerializeField]
     private float velocidadeMov;
 
-
-
-
-
     // Update is called once per frame
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
     }
+
     void Update()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");

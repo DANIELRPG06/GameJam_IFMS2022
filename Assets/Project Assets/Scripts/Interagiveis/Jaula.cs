@@ -1,23 +1,22 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
-public class Jaula: MonoBehaviour, IInteragivel
+public class Jaula : MonoBehaviour, IInteragivel
 {
     [SerializeField]
     private Animator jaulaAnim;
-    
+
     public bool Interagir(Player player)
     {
-        if (player.chaveQtd > 0)
-        {
-            player.DecrementaChave();
-            player.DaPontos(100);
-            
-            jaulaAnim.SetTrigger("abrir");
+        if (player.chaveQtd <= 0)
+            return false;
 
-            return true;
-        }
-        return false;
+        player.DecrementaChave();
+        player.DaPontos(100);
+
+        jaulaAnim.SetTrigger("abrir");
+
+        return true;
     }
 
     public bool PrecisaInput()
@@ -31,9 +30,7 @@ public class Jaula: MonoBehaviour, IInteragivel
         {
             return "Pressione E para libertar";
         }
-        else
-        {
-            return "Você precisa de uma chave";
-        }
+
+        return "Você precisa de uma chave";
     }
 }

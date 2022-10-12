@@ -1,7 +1,9 @@
 using UnityEngine;
 using Pathfinding;
 
-public class PathSeeker : MonoBehaviour {
+[RequireComponent(typeof(Seeker), typeof(TopDownCharacterMotor))]
+public class PathSeeker : MonoBehaviour
+{
     public Vector2 targetPosition;
 
     private Seeker seeker;
@@ -17,28 +19,36 @@ public class PathSeeker : MonoBehaviour {
 
     public bool reachedEndOfPath;
 
-    public void Start () {
-        seeker = GetComponent<Seeker>();       
+    public void Start()
+    {
+        seeker = GetComponent<Seeker>();
         motor = GetComponent<TopDownCharacterMotor>();
     }
 
-    public void SetTarget(Vector2 target) {
+    public void SetTarget(Vector2 target)
+    {
         targetPosition = target;
         seeker.StartPath(transform.position, targetPosition, OnPathComplete);
     }
 
-    public void OnPathComplete (Path p) {
-        if (!p.error) {
+    public void OnPathComplete(Path p)
+    {
+        if (!p.error)
+        {
             path = p;
             // Reset the waypoint counter so that we start to move towards the first point in the path
             currentWaypoint = 0;
-        }else{
+        }
+        else
+        {
             reachedEndOfPath = true;
         }
     }
 
-    public void Update () {
-        if (path == null) {
+    public void Update()
+    {
+        if (path == null)
+        {
             return;
         }
 
@@ -48,25 +58,31 @@ public class PathSeeker : MonoBehaviour {
         reachedEndOfPath = false;
         // The distance to the next waypoint in the path
         float distanceToWaypoint;
-        while (true) {
+        while (true)
+        {
             distanceToWaypoint = Vector3.Distance(transform.position, path.vectorPath[currentWaypoint]);
-            if (distanceToWaypoint < nextWaypointDistance) {
+            if (distanceToWaypoint < nextWaypointDistance)
+            {
                 // Check if there is another waypoint or if we have reached the end of the path
-                if (currentWaypoint + 1 < path.vectorPath.Count) {
+                if (currentWaypoint + 1 < path.vectorPath.Count)
+                {
                     currentWaypoint++;
-                } else {
+                }
+                else
+                {
                     reachedEndOfPath = true;
                     break;
                 }
-            } else {
+            }
+            else
+            {
                 break;
             }
         }
 
-
         // Direction to the next waypoint
         Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
-       
+
         motor.SetMove(dir);
         motor.SetLook(dir);
 

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[RequireComponent(typeof(TopDownCharacterMotor))]
+[RequireComponent(typeof(TopDownCharacterMotor), typeof(PathSeeker))]
 public class Inimigo : MonoBehaviour
 {
 
@@ -72,11 +72,6 @@ public class Inimigo : MonoBehaviour
     private void Perseguir()
     {
         motor.SetRunning(true);
-        Vector2 posicaoAlvo = this.alvo;
-        Vector2 posicaoAtual = this.transform.position;
-
-        float distancia = Vector2.Distance(posicaoAtual, posicaoAlvo);
-
         // Chegou até a ultima posição do player e não o achou, volta a patrulhar
         if (seeker.reachedEndOfPath)
         {
